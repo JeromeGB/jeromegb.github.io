@@ -1,70 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jérôme Garnier-Brun - Academic Researcher</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jérôme Garnier-Brun - Academic Profile</title>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --primary-color: #800020;
+                --accent-color: #a84747;
+                --background-color: #f5f1eb;
+                --text-color: #2d2d2d;
+                --light-accent: #f8f4ef;
             }
-        }
-        
-        h1, h2 {
-            color: #2c3e50;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .publication {
-            margin-bottom: 15px;
-        }
-    </style>
-</head>
+    
+            body {
+                font-family: 'Lora', serif;
+                line-height: 1.7;
+                margin: 0;
+                padding: 0;
+                background-color: var(--background-color);
+                color: var(--text-color);
+            }
+    
+            .container {
+                max-width: 1200px;
+                width: 70%;
+                margin: 3rem auto;
+                padding: 0 20px;
+            }
+    
+            .tab-container {
+                background: var(--light-accent);
+                border: 1px solid #e0d5c7;
+            }
+    
+            .tab-buttons {
+                background-color: var(--primary-color);
+                padding: 0.8rem;
+                display: flex;
+                gap: 0.5rem;
+                border-bottom: 1px solid #e0d5c7;
+            }
+    
+            .tab-button {
+                color: #f5f1eb;
+                background: none;
+                border: none;
+                padding: 0.6rem 1.2rem;
+                font-family: 'Crimson Pro', serif;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+    
+            .tab-button:hover {
+                color: white;
+                background-color: rgba(255,255,255,0.1);
+            }
+    
+            .tab-button.active {
+                color: white;
+                background-color: var(--accent-color);
+            }
+    
+            .tab-content {
+                display: none;
+                padding: 2.5rem;
+            }
+    
+            .tab-content.active {
+                display: block;
+                animation: fadeIn 0.4s ease;
+            }
+    
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+    
+            h1 {
+                font-family: 'Crimson Pro', serif;
+                color: var(--primary-color);
+                font-size: 2.8rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+                letter-spacing: -0.02em;
+            }
+    
+            h2 {
+                font-family: 'Crimson Pro', serif;
+                color: var(--accent-color);
+                font-size: 1.8rem;
+                margin: 2rem 0 1rem;
+                font-weight: 600;
+            }
+    
+            .section {
+                margin-bottom: 2.5rem;
+            }
+    
+            /* Add this CSS */
+            body {
+                counter-reset: pub-counter;
+            }
+
+            .publication {
+                counter-increment: pub-counter;
+                margin-bottom: 2rem;
+            }
+
+            .publication::before {
+                content: counter(pub-counter) ".";
+                color: var(--accent-color);
+                position: absolute;
+                left: 0.5rem;
+}
+
+            .publication {
+                position: relative;
+                padding-left: 2.5rem;  /* Increased padding to accommodate number */
+            }
+
+            /* Add spacing between sections */
+            h2 {
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Optional: add more space before first h2 */
+            .section h2:first-child {
+                margin-top: 0;
+}
+    
+            li {
+                list-style: none;
+            }
+    
+            p {
+                margin-bottom: 1.2rem;
+            }
+        </style>
+    </head>
 <body>
-    <div class="section">
-        <h1>Jérôme Garnier-Brun</h1>
-        <p>Postdoctoral Researcher<br>
-        Department of Computing Sciences<br>
-        Università Bocconi, Milan, Italy</p>
-    </div>
+    <div class="container">
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
+                <button class="tab-button" onclick="openTab(event, 'research')">Research</button>
+                <button class="tab-button" onclick="openTab(event, 'publications')">Publications</button>
+            </div>
 
-    <div class="section">
-        <h2>Research Interests</h2>
-        <p>Statistical Physics, Disordered & Complex Systems, Machine Learning</p>
-    </div>
+            <div id="home" class="tab-content active">
+                <div class="section">
+                    <h1>Jérôme Garnier-Brun</h1>
+                    <p>Postdoctoral Researcher<br>
+                    Department of Computing Sciences<br>
+                    Università Bocconi, Milan, Italy</p>
+                </div>
 
-    <div class="section">
-        <h2>Publications</h2>
-        <div class="publication">
-            <!-- Publication format example -->
-            <li> 
-                J. Garnier-Brun, R. Zakine, M. Benzaquen <br>
-                     <i> From Nonequilibrium to Equilibrium: Insights from a Two-Population Occupation Model </i> <br>
-                    <a href="https://arxiv.org/abs/2412.14996" target="_blank">Preprint </a>
-                     </a>
-                    </li>
-                <br>
-                
+                <div class="section">
+                    <h2>Contact</h2>
+                    <p>Email: jerome DOT garnier AT unibocconi DOT it</p>
+                </div>
+            </div>
+
+            <div id="research" class="tab-content">
+                <div class="section">
+                    <h2>Research Interests</h2>
+                    <p>Statistical Physics, Disordered & Complex Systems, Machine Learning</p>
+                </div>
+            </div>
+
+            <div id="publications" class="tab-content">
+                <div class="section">
+                    <h2>Preprints</h2>
+                    <div class="publication">
+                        Garnier-Brun J., Zakine R. & Benzaquen M. (2024).<br>
+                        <i>From nonequilibrium to equilibrium: insights from a two-population occupation model.</i><br>
+                        arXiv preprint, arXiv:2412.14996
+                        [<a href="https://doi.org/10.48550/arXiv.2412.14996" target="_blank">arXiv</a>]
+                    </div>
+            
+                    <div class="publication">
+                        Garnier-Brun J., Mézard M., Moscato E. & Saglietti L. (2024).<br>
+                        <i>How transformers learn structured data: insights from hierarchical filtering.</i><br>
+                        arXiv preprint, arXiv:2408.15138
+                        [<a href="https://doi.org/10.48550/arXiv.2408.15138" target="_blank">arXiv</a>]
+                    </div>
+            
+                    <h2>Journal Publications</h2>
+                    <div class="publication">
+                        Garnier-Brun J., Benzaquen M. & Bouchaud J.-P. (2024).<br>
+                        <i>Unlearnable Games and 'Satisficing' Decisions: A Simple Model for a Complex World.</i><br>
+                        Phys. Rev. X 14, 021039
+                        [<a href="https://doi.org/10.1103/PhysRevX.14.021039" target="_blank">OA journal</a>]<br>
+                        Featured in New Scientist 
+                        [<a href="https://www.newscientist.com/article/2430346-game-theory-shows-we-can-never-learn-perfectly-from-our-mistakes/" target="_blank">link</a>]
+                    </div>
+            
+                    <div class="publication">
+                        Zakine R., Garnier-Brun J., Becharat A.-C. & Benzaquen M. (2024).<br>
+                        <i>Socioeconomic agents as active matter in nonequilibrium Sakoda-Schelling models.</i><br>
+                        Phys. Rev. E 109, 044310
+                        [<a href="https://doi.org/10.1103/PhysRevE.109.044310" target="_blank">journal</a>,
+                        <a href="https://arxiv.org/abs/2307.14270" target="_blank">arXiv</a>]
+                    </div>
+            
+                    <div class="publication">
+                        Dechant A., Garnier-Brun J. & Sasa S.-I. (2023).<br>
+                        <i>Thermodynamic bounds on correlation times.</i><br>
+                        Phys. Rev. Lett. 131, 167101 (Editor's Suggestion)
+                        [<a href="https://doi.org/10.1103/PhysRevLett.131.167101" target="_blank">journal</a>,
+                        <a href="https://arxiv.org/abs/2303.13038" target="_blank">arXiv</a>]
+                    </div>
+            
+                    <div class="publication">
+                        Garnier-Brun J., Bouchaud J.-P. & Benzaquen M. (2023).<br>
+                        <i>Bounded rationality and animal spirits: a fluctuation-response approach to Slutsky matrices.</i><br>
+                        J. Phys. Complex. 4, 015004
+                        [<a href="https://doi.org/10.1088/2632-072X/acb0a7" target="_blank">OA journal</a>]
+                    </div>
+            
+                    <div class="publication">
+                        Alemany I., Rose J. N., Garnier-Brun J., Scott A. D., & Doorly D. J. (2022).<br>
+                        <i>Random walk diffusion simulations in semi-permeable layered media with varying diffusivity.</i><br>
+                        Sci. Rep. 12, 10759
+                        [<a href="https://doi.org/10.1038/s41598-022-14541-y" target="_blank">OA journal</a>]
+                    </div>
+            
+                    <div class="publication">
+                        Garnier-Brun J., Benzaquen M., Ciliberti S., & Bouchaud J.-P. (2021).<br>
+                        <i>A new spin on optimal portfolios and ecological equilibria.</i><br>
+                        J. Stat. Mech. 093408 (featured in Highlights)
+                        [<a href="https://doi.org/10.1088/1742-5468/ac21d9" target="_blank">OA journal</a>]
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2>Contact</h2>
-        <p>Email: jerome DOT garnier AT uniboccini DOT it<br>
-        Office: Building Name, Room Number</p>
-    </div>
+    <script>
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            Array.from(tabContents).forEach(tab => tab.classList.remove("active"));
+            
+            const tabButtons = document.getElementsByClassName("tab-button");
+            Array.from(tabButtons).forEach(button => button.classList.remove("active"));
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
