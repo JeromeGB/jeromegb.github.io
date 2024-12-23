@@ -173,6 +173,21 @@
             p {
                 margin-bottom: 1.2rem;
             }
+
+            .profile-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .profile-image {
+                width: 180px;  /* Increased width */
+                height: auto;  /* Let height adjust automatically */
+                border-radius: 5px;
+                object-fit: contain;  /* Changed from cover to contain */
+                max-height: 250px;  /* Add maximum height if needed */
+            }
         </style>
     </head>
 <body>
@@ -186,10 +201,15 @@
 
             <div id="home" class="tab-content active">
                 <div class="section">
-                    <h1>Jérôme Garnier-Brun</h1>
-                    <p>Postdoctoral Researcher<br>
-                    Department of Computing Sciences & Department of Finance<br>
-                    Università Bocconi, Milan, Italy</p>
+                    <div class="profile-container">
+                        <div>
+                            <h1>Jérôme Garnier-Brun</h1>
+                            <p>Postdoctoral Researcher<br>
+                            Department of Computing Sciences & Department of Finance<br>
+                            Università Bocconi, Milan, Italy</p>
+                        </div>
+                        <img src="PP.jpeg" alt="Jérôme Garnier-Brun" class="profile-image">
+                    </div>
                 </div>
 
                 <div class="section">
