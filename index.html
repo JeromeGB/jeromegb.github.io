@@ -45,6 +45,16 @@
                 --text-color: #2d2d2d;
                 --light-accent: #f8f4ef;
             }
+
+            a {
+                color: var(--primary-color);
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+
+            a:hover {
+                color: var(--accent-color);
+            }
     
             body {
                 font-family: 'Lora', serif;
@@ -131,15 +141,11 @@
     
             .section {
                 margin-bottom: 2.5rem;
-            }
-    
-            /* Add this CSS */
-            body {
-                counter-reset: pub-counter;
+                counter-reset: pub-counter 9;
             }
 
             .publication {
-                counter-increment: pub-counter;
+                counter-increment: pub-counter -1;
                 margin-bottom: 2rem;
             }
 
@@ -254,7 +260,7 @@
                         Before that, I did my PhD between École polytechnique and Capital Fund Management, within the chair of Econophysics and Complex Systems and under the supervision of Jean-Philippe Bouchaud and Michael Benzaquen. There, I mainly worked on the problems at the interface between the physics of spin-glasses and disordered socioeconomic systems.
                     </p>
                     <p>
-                        Outside of research, I enjoy hiking, trail running and cycling in the summer, and skiing and ski mountaineering in the winter. I am also a poor but enthusiastic footballer and a decent cook.
+                        Outside of research, I enjoy hiking, trail running and cycling in the summer, and skiing and ski mountaineering in the winter. I am also a poor but enthusiastic footballer and a (self-proclaimed) decent cook.
                     </p>
                 </div>
 
