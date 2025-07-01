@@ -290,6 +290,7 @@
                 <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
                 <button class="tab-button" onclick="openTab(event, 'research')">Research</button>
                 <button class="tab-button" onclick="openTab(event, 'publications')">Publications</button>
+                <button class="tab-button" onclick="openTab(event, 'cv')">CV</button>
             </div>
 
             <div id="home" class="tab-content active">
@@ -490,6 +491,12 @@
                     </div>
                 </div>
             </div>
+            <div id="cv" class="tab-content">
+                <!--
+                -->
+                <iframe src="./CV.pdf" width="100%" height="800px" style="border: none;"></iframe>
+                
+            </div>
         </div>
     </div>
 
@@ -498,6 +505,7 @@
             const tabContents = document.getElementsByClassName("tab-content");
             Array.from(tabContents).forEach(tab => tab.classList.remove("active"));
             
+
             const tabButtons = document.getElementsByClassName("tab-button");
             Array.from(tabButtons).forEach(button => button.classList.remove("active"));
             
