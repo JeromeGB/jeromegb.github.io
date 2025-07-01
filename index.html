@@ -147,6 +147,8 @@
             .publication {
                 counter-increment: pub-counter -1;
                 margin-bottom: 2rem;
+                position: relative;
+                padding-left: 2.5rem;
             }
 
             .publication::before {
@@ -154,11 +156,48 @@
                 color: var(--accent-color);
                 position: absolute;
                 left: 0.5rem;
-}
+            }
 
-            .publication {
-                position: relative;
-                padding-left: 2.5rem;  /* Increased padding to accommodate number */
+            .text-with-image {
+                display: flex;
+                gap: 20px;
+                align-items: flex-start;
+                margin-top: 1rem;
+            }
+        
+            .text-content {
+                flex: 3;
+            }
+        
+            .image-sidebar {
+                flex: 1;
+                text-align: center;
+            }
+        
+            .research-image-Schelling {
+                width: 60%;
+                height: auto;
+                border: 0px solid #ddd;
+            }
+        
+            .research-image-SK {
+                width: 90%;
+                height: auto;
+                border: 0px solid #ddd;
+            }
+
+            .research-caption {
+                font-size: 0.9em;
+                color: #666;
+                margin-top: 1px;
+                font-style: italic;
+            }
+        
+            /* Mobile responsive */
+            @media (max-width: 600px) {
+                .text-with-image {
+                    flex-direction: column;
+                }
             }
 
             /* Add spacing between sections */
@@ -180,11 +219,11 @@
 
             li {
                 margin-bottom: 0.5rem;
-                list-style-type: disc;  /* For bullets */
+                list-style-type: disc;
             }
 
             ol li {
-                list-style-type: decimal;  /* For numbers */
+                list-style-type: decimal;
             }
     
             p {
@@ -199,22 +238,19 @@
             }
 
             .profile-image {
-                width: 180px;  /* Increased width */
-                height: auto;  /* Let height adjust automatically */
+                width: 180px;
+                height: auto;
                 border-radius: 5px;
-                object-fit: contain;  /* Changed from cover to contain */
-                max-height: 250px;  /* Add maximum height if needed */
+                object-fit: contain;
+                max-height: 250px;
             }
 
-            /* Add to your existing CSS */
             .research-image-ML {
                 width: 50%;
                 max-width: 800px;
                 height: auto;
                 margin: 2rem auto;
                 display: block;
-                /* border: 1px solid #e0d5c7;  /* Optional: adds subtle border */
-                /* border-radius: 4px; */
             }
 
             .research-caption {
@@ -224,6 +260,26 @@
                 margin: 1rem auto 2rem;
                 max-width: 800px;
                 font-size: 0.9rem;
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .social-icon {
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+
+            .social-icon svg {
+                fill: #666;
+                transition: fill 0.3s ease;
+            }
+
+            .social-icon:hover svg {
+                fill: var(--accent-color);
             }
         </style>
     </head>
@@ -255,9 +311,9 @@
                         <strong>Hello!</strong>
                     </p>
                     <p>
-                        My name is Jérôme Garnier-Brun and I am currently a Marie Skłodowska-Curie postdoctoral research fellow at Università Bocconi in Milan, Italy. I am working with Marc Mézard as part of the Machine Learning & Statistical Physics group of the Department of Computing Sciences on questions relating to the role of structure in data for machine learning. I am also affiliated to the Department of Finance, where I collaborate with Claudio Tebaldi on the application of statistical physics to economics and finance.</p>
+                        My name is Jérôme Garnier-Brun and I am currently a Marie Skłodowska-Curie postdoctoral research fellow at Università Bocconi in Milan, Italy. I am working with Marc Mézard as part of the Machine Learning & Statistical Physics group of the Department of Computing Sciences on questions relating to the role of the structure of data for machine learning. I am also interested in emerging questions around collective and decentralized learning, as well as fundamental aspects of the statistical mechanics of complex systems. </p>
                     <p>
-                        Before that, I did my PhD between École polytechnique and Capital Fund Management, within the chair of Econophysics and Complex Systems under the supervision of Jean-Philippe Bouchaud and Michael Benzaquen. There, I mainly worked on the problems at the interface between the physics of spin-glasses and disordered socioeconomic systems.
+                        Before that, I did my PhD at École polytechnique within the CFM chair of Econophysics and Complex Systems under the supervision of Jean-Philippe Bouchaud and Michael Benzaquen. There, I mainly worked on the problems at the interface between the physics of spin-glasses and disordered socioeconomic systems.
                     </p>
                     <p>
                         Outside of research, I enjoy hiking, trail running and cycling in the summer, and skiing and ski mountaineering in the winter. I am also a poor but enthusiastic footballer and a (self-proclaimed) decent cook.
@@ -267,45 +323,105 @@
                 <div class="section">
                     <h2>Recent news</h2>
                     <ul>
+                        <li><i> July 2024</i>: I will be presenting our work on how transformers learn stuctured data as a poster at ICML in Vancouver! We will also have a poster on preliminary work on generative diffusion at the MemFM workshop.</li>
                         <li><i>April 2024</i>: I am happy to announce I have been awarded a Marie Skłodowska-Curie fellowship for my project SPIRAL (<i>Structured Physics-Inspired Representations and dAta models for efficient Learning</i>), extending my stay at Bocconi under the supervision of Marc Mézard!
                         </li>
-                        <li><i>December 2024</i>: New preprint with Ruben Zakine and Michael Benzaquen on a nonequilibrium socioeconomic agent-based model is out!</li>
-                        <li><i>September 2024</i>: I presented our work on how transformers learn structured data at the <i>Rockin'AI</i> summer school in Roccella Ionica, Calabria.</li>
-                        <li><i>August 2024</i>: New preprint with Marc Mézard, Emanuele Moscato and Luca Saglietti on how transformers learn structured data is out!</li>
+                        <li><i>December 2024</i>: New preprint with Ruben Zakine and Michael Benzaquen on a nonequilibrium socioeconomic agent-based model is out.</li>
                     </ul>
                 </div>
 
                 <div class="section">
                     <h2>Contact</h2>
                     <p>Email: jerome DOT garnier AT unibocconi DOT it</p>
+
+                    <div class="social-icons">
+                        <a href="https://scholar.google.com/citations?user=G6H5cIMAAAAJ&hl=fr" target="_blank" class="social-icon" title="Google Scholar">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path d="M5.242 13.769L0.5 9.5 12 1l11.5 8.5-4.742 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jeromegb/" target="_blank" class="social-icon" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Jerome-Garnier-Brun" target="_blank" class="social-icon" title="ResearchGate">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="researchgate-icon" width="32" height="32">
+                                <path d="M32.04 15.97c0,8.85 -7.18,16.03 -16.02,16.03 -8.85,0 -16.02,-7.18 -16.02,-16.03 0,-8.85 7.17,-16.03 16.02,-16.03 8.84,0 16.02,7.18 16.02,16.03z" />
+                                <path d="M17.25 22.97c-1.43,-0.28 -2.28,-1.11 -4.45,-4.33 -0.72,-1.08 -0.72,-1.08 -1.42,-1.13 -1.03,-0.07 -0.95,-0.25 -0.92,2.02 0.04,2.58 0.01,2.52 1.5,2.77 0.39,0.06 0.42,0.09 0.42,0.32 0,0.26 0,0.26 -2.62,0.28 -2.46,0.02 -2.62,0.01 -2.67,-0.14 -0.1,-0.29 0.05,-0.43 0.59,-0.53 0.61,-0.11 0.93,-0.36 1.01,-0.78 0.04,-0.16 0.05,-2.32 0.03,-4.8 -0.03,-5.21 0.03,-4.9 -0.93,-5.11 -0.6,-0.13 -0.79,-0.27 -0.71,-0.51 0.06,-0.16 0.19,-0.17 2.92,-0.22 4.06,-0.08 4.82,0.05 5.9,1.01 1.13,1.01 1.29,2.55 0.39,3.84 -0.4,0.58 -1.2,1.2 -1.82,1.43 -0.29,0.11 -0.53,0.23 -0.53,0.27 0,0.12 0.92,1.43 1.49,2.13 1.52,1.85 2.34,2.57 3.19,2.79 0.53,0.14 0.68,0.29 0.53,0.55 -0.16,0.27 -0.96,0.33 -1.9,0.14zm-3.83 -6.63c2,-0.82 2.15,-3.57 0.25,-4.38 -0.49,-0.21 -0.62,-0.22 -1.85,-0.22 -1.33,0 -1.33,0 -1.35,2.31 -0.02,1.27 -0.01,2.37 0.02,2.43 0.09,0.21 2.34,0.1 2.93,-0.14zm6.97 -2.85c-1.55,-0.29 -2.06,-1.24 -1.98,-3.68 0.04,-1.35 0.15,-1.72 0.67,-2.28 0.92,-0.99 3.2,-0.9 4.04,0.16 0.36,0.45 0.33,0.59 -0.17,0.74 -0.39,0.13 -0.39,0.13 -0.75,-0.23 -0.85,-0.82 -2.32,-0.52 -2.58,0.54 -0.13,0.47 -0.12,2.46 0.01,2.91 0.35,1.27 2.46,1.27 2.82,0 0.22,-0.81 0.17,-0.87 -0.8,-0.92 -0.47,-0.02 -0.47,-0.02 -0.47,-0.41 0,-0.38 0,-0.38 1.12,-0.41 1.45,-0.03 1.43,-0.05 1.36,1.01 -0.09,1.33 -0.45,1.97 -1.32,2.35 -0.57,0.24 -1.35,0.33 -1.95,0.22z" fill="#ffffff"/>
+                                </svg>
+
+                            </a>
+                            
+                    </div>
                 </div>
             </div>
 
             <div id="research" class="tab-content">
                 <div class="section">
-                    <h2>The role of the structure of data in machine learning</h2>
-                    <p>
-                        In the last few years, the success of deep learning, and in particular Large Language Models (LLMs), has been largely driven by the availability of large datasets and the development of powerful computing hardware. However, the role of the structure of data in machine learning is still not well understood. In particular, the question of how to exploit the structure of data to improve the performance of machine learning algorithms remains largely open.
-                    </p>
-                    <p>
-                        We tackle this question by leveraging simple, tree-based models of data. In this context, we have notably understood how transformers sequentially learn the underlying structure of the data model, and seem to implement the optimal inference algorithm. 
-                    </p>
+                    <h2>Learning representations from structured data</h2>
+                    <p> Machine learning systems often excel when they can leverage underlying structure in data&mdash;such as hierarchies, symmetries, or latent generative processes. Yet, despite the remarkable empirical success of deep learning, the theoretical understanding of how models exploit this structure remains limited. What kinds of structure matter most? How are they internalized by different architectures? And how do these inductive biases affect learning and generalization? </p> 
+                    
+                    <p> My research explores these questions through simplified yet expressive models of structured data, such as tree-like or hierarchical generative processes. These toy models provide a controlled setting to test how learning systems uncover and exploit latent structure. In recent work, for instance, we have shown how transformers learn hierarchical features in a sequential and near-optimal way, shedding light on their surprising capacity for structured inference. </p> 
+                    
+                    <p> More broadly, this line of work aims to bridge the gap between statistical physics, learning theory, and practical machine learning, offering tools to analyze not just what models learn, but how and why they learn it. </p>
                     <img src="Attention_mats_full.png" alt="Attention matrices visualization" class="research-image-ML">
                     <p class="research-caption">
                         Visualization of attention patterns in a four layer transformer trained on tree-based hierarchical data.
                     </p>
+                </div>
+                
+                <div class="section">
+                    <h2> Generalization and memorization in diffusion models</h2>
+                    <p> Understanding how and when machine learning models generalize beyond their training data is a central challenge in modern AI. While diffusion models have achieved striking success, the mechanisms by which they memorize, interpolate, or generalize remain elusive, despite major privacy and intellectual property related considerations.</p>
+
+                    <p> My research investigates these questions through a statistical physics lens, combining theoretical analysis with simplified data models that allow for precise control and insight. In particular, we explore whether analogies with disordered systems such as Random Energy Models can shed light on their learning dynamics. By drawing connections between inference, energy landscapes, and generative trajectories, we hope to better understand the limits and potential pathologies of modern generative models. </p>
+                </div>
+                
+                <div class="section">
+                    <h2>Self-supervised learning in rich environments</h2>
+                    <p> In many real-world situations, agents must learn without explicit supervision or rewards, relying only on the internal consistency of their own predictions. This is particularly relevant in data-rich but label-poor regimes; a setting where self-supervised learning becomes both necessary and powerful. </p> 
                     
-                    <h2> Generative diffusion </h2>
-                    <p>
-                        In addition to LLMs for text, the generative AI revolution has also been enabled by so-called diffusion models for image creation. By training complex architectures to denoise images, one can indeed produce seemingly novel visuals by following a reverse diffusion process starting from pure noise. Despite their effectiveness and widespread adoption, the role of memorized training data in what these models produce is still unclear, posing important challenges from the perspective of privacy and intellectual property. More generally, the way meaningful new samples are being sculpted along the reverse diffusion process remains poorly understood. 
-                    </p>
+                    <p> In this context, we develop minimal models of agents that learn from their own predictions in such environments. Inspired by ideas from artificial life and statistical physics, these "replicator" agents adapt their internal parameters based on self-consistency rules applied over fresh samples of structured data.</p>
+                    
+                    <p>This framework provides a new theoretical lens on self-supervised learning: it allows us to identify the minimal ingredients required for meaningful adaptation, analyze how environmental structure interacts with internal dynamics, and quantify learning performance under data constraints. Such simple models also opens the door to studying collective learning in multi-agent systems with the tools of statistical mechanics. </p>
+                </div>
+                
+                <div class="section">
+                    <h2>Disordered systems with non-reciprocal interactions</h2>
+                    <div class="text-with-image">
+                        <div class="text-content">
+                            <p> Complex systems operate in rugged, high-dimensional landscapes&mdash;from neural representations to economic equilibria. Inspired by the physics of spin glasses, my research investigates the dynamics and structure of such disordered systems, especially when agents or components interact in asymmetric and non-reciprocal ways. </p>
+                        
+                            <p> In particular, I study the emergence of glassy phases in learning and decision-making systems, characterized by long memory, frustration, and multiplicity of equilibria. These systems challenge conventional notions of optimization or convergence, highlighting instead the role of noise, instability, and irreversibility in shaping collective behavior. </p> 
+                        
+                            <p> Recent work has focused on extending classical disordered models to include non-reciprocal interactions, common in many real-world systems from neural circuits to socioeconomic systems, and studying how such asymmetries affect the glassy dynamics of disordered systems.</p> 
+                        </div>
+                        <div class="image-sidebar">
+                            <img src="aging_plot.png" alt="Aging in a non-reciprocal disordered system." class="research-image-SK">
+                            <p class="research-caption">
+                            "Aging" dynamics in a non-reciprocal disordered system inspired by the SK spin-glass.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                    <p>
-                        We investigate these issues using the tools of statistical physics, and explore the role the structure of data may play there.
-                    </p>
-                    <h2>Disordered socioeconomic toy models</h2>
-
-                    <h2>Nonequilibrium field theories: from active matter to spatial agent-based models</h2>
+                <div class="section">
+                    <h2>Nonequilibrium hydrodynamics of spatial agent-based models</h2>
+                    <div class="text-with-image">
+                        <div class="text-content">
+                            <p> Complex collective behavior often emerges from simple local interactions, especially in systems far from equilibrium. Whether in urban organization, ecological migration, or socioeconomic dynamics, agent-based models (ABMs) offer a powerful framework for exploring how individual-level rules give rise to macroscopic patterns. </p>
+                            
+                            <p> My research uses minimal ABMs inspired by statistical physics and active matter to study how heterogeneity, feedback, and spatial constraints shape collective outcomes. These models bridge micro and macro scales, allowing us to derive effective continuum descriptions&mdash;such as hydrodynamic or field-theoretic limits&mdash;that capture emergent flows, phase transitions, and instabilities. </p>
+                            <p>Recent work has notably focused on extending classical Schelling-like occupation models into genuine nonequilibrium settings, where feedback between local densities and agent preferences can produce pattern formation, hysteresis, or critical behavior. Such models reveal the deep connections between socioeconomic processes and physical systems, offering both conceptual insights and a quantitative framework for exploring decentralized adaptation in complex environments.</p>
+                        </div>
+                        <div class="image-sidebar">
+                            <img src="two_specie_snapshot.png" alt="Two-population Schelling model" class="research-image-Schelling">
+                            <p class="research-caption">
+                            Two-population Schelling-like model. Top: phase-separated; Bottom: 'chasing'.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -319,18 +435,18 @@
                         [<a href="https://doi.org/10.48550/arXiv.2412.14996" target="_blank">arXiv</a>]
                     </div>
             
-                    <div class="publication">
-                        Garnier-Brun J., Mézard M., Moscato E. & Saglietti L. (2024).<br>
-                        <i>How transformers learn structured data: insights from hierarchical filtering.</i><br>
-                        arXiv preprint, arXiv:2408.15138
-                        [<a href="https://doi.org/10.48550/arXiv.2408.15138" target="_blank">arXiv</a>]
-                    </div>
-            
                     <h2>Journal Publications</h2>
+                    <div class="publication">
+                        Garnier-Brun J., Mézard M., Moscato E. & Saglietti L. (2025).<br>
+                        <i>How transformers learn structured data: insights from hierarchical filtering.</i><br>
+                        Proceedings of the 42<sup>nd</sup> International Conference on Machine Learning (ICML),  PMLR 267
+                        [<a href="https://openreview.net/forum?id=AVXApuBCvN" target="_blank">OpenReview</a>]
+                    </div>
+
                     <div class="publication">
                         Garnier-Brun J., Benzaquen M. & Bouchaud J.-P. (2024).<br>
                         <i>Unlearnable games and 'satisficing' decisions: a simple model for a complex world.</i><br>
-                        Phys. Rev. X 14, 021039
+                        Physical Review X 14, 021039
                         [<a href="https://doi.org/10.1103/PhysRevX.14.021039" target="_blank">OA journal</a>]<br>
                         Featured in New Scientist 
                         [<a href="https://www.newscientist.com/article/2430346-game-theory-shows-we-can-never-learn-perfectly-from-our-mistakes/" target="_blank">link</a>]
@@ -339,7 +455,7 @@
                     <div class="publication">
                         Zakine R., Garnier-Brun J., Becharat A.-C. & Benzaquen M. (2024).<br>
                         <i>Socioeconomic agents as active matter in nonequilibrium Sakoda-Schelling models.</i><br>
-                        Phys. Rev. E 109, 044310
+                        Physical Review E 109, 044310
                         [<a href="https://doi.org/10.1103/PhysRevE.109.044310" target="_blank">journal</a>,
                         <a href="https://arxiv.org/abs/2307.14270" target="_blank">arXiv</a>]
                     </div>
@@ -347,7 +463,7 @@
                     <div class="publication">
                         Dechant A., Garnier-Brun J. & Sasa S.-I. (2023).<br>
                         <i>Thermodynamic bounds on correlation times.</i><br>
-                        Phys. Rev. Lett. 131, 167101 (Editor's Suggestion)
+                        Physical Review Letters 131, 167101 (Editor's Suggestion)
                         [<a href="https://doi.org/10.1103/PhysRevLett.131.167101" target="_blank">journal</a>,
                         <a href="https://arxiv.org/abs/2303.13038" target="_blank">arXiv</a>]
                     </div>
@@ -355,21 +471,21 @@
                     <div class="publication">
                         Garnier-Brun J., Bouchaud J.-P. & Benzaquen M. (2023).<br>
                         <i>Bounded rationality and animal spirits: a fluctuation-response approach to Slutsky matrices.</i><br>
-                        J. Phys. Complex. 4, 015004
+                        Journal of Physics: Complexity 4, 015004
                         [<a href="https://doi.org/10.1088/2632-072X/acb0a7" target="_blank">OA journal</a>]
                     </div>
             
                     <div class="publication">
                         Alemany I., Rose J. N., Garnier-Brun J., Scott A. D., & Doorly D. J. (2022).<br>
                         <i>Random walk diffusion simulations in semi-permeable layered media with varying diffusivity.</i><br>
-                        Sci. Rep. 12, 10759
+                        Scientific Reports 12, 10759
                         [<a href="https://doi.org/10.1038/s41598-022-14541-y" target="_blank">OA journal</a>]
                     </div>
             
                     <div class="publication">
                         Garnier-Brun J., Benzaquen M., Ciliberti S., & Bouchaud J.-P. (2021).<br>
                         <i>A new spin on optimal portfolios and ecological equilibria.</i><br>
-                        J. Stat. Mech. 093408 (featured in Highlights)
+                        Journal of Statistical Mechanics: Theory and Experiments 093408 (featured in Highlights)
                         [<a href="https://doi.org/10.1088/1742-5468/ac21d9" target="_blank">OA journal</a>]
                     </div>
                 </div>
